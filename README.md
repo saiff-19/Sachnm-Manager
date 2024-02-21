@@ -1,6 +1,6 @@
 # Attendance Management System
 
-[Project Image](https://github.com/saiff-19/Sachnm-Manager/assets/126145927/3b8f9554-e8ad-4cde-bbc0-bd2b1f6604ca)
+(https://github.com/saiff-19/Sachnm-Manager/assets/126145927/3b8f9554-e8ad-4cde-bbc0-bd2b1f6604ca)
 
 
 ## Introduction
