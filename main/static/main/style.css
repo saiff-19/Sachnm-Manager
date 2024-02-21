@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma,Geneva, Verdana, sans-serif;
+    background-color: #f1f1f1b2;
+}
+
+.navbar {
+    background-color: #0075ff;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.5s ease; /* Slowdown the background color transition */
+}
+
+.logo_img {
+    background-image: url(Logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 130px;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-list li {
+    margin-right: 15px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 2.5px 0;
+    transition: .3s ease-out;
+}
+
+.burger.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5.5px, 6px);
+}
+
+.burger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5.5px, -6px);
+}
+.attendance-container {
+    text-align: center;
+    margin: auto; /* Center horizontally and add margin */
+    overflow-x: auto; /* Enable horizontal scrolling on smaller screens */
+    max-width: 80%; /* Limit the width to 70% on smaller screens */
+}
+
+h1.attendance {
+    margin-top: 80px;
+    color: #333;
+}
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.attendance-table th,
+.attendance-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.attendance-table th {
+    background-color: #0075ff;
+    color: #fff;
+}
+
+.attendance-table td {
+    text-align: center;
+}
+
+.attendance-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.attendance-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styles for attendance status (P for Present, A for Absent, etc.) */
+.attendance-table td.P {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.attendance-table td.A {
+    background-color: #ff5252;
+    color: #fff;
+}
+
+/* Add more styles for other status as needed */
+
+/* Adjustments for new columns */
+.attendance-table th:nth-child(2),
+.attendance-table th:nth-child(3),
+.attendance-table th:nth-child(4) {
+    background-color: #0075ff;
+    color: #fff;
+}
+
+.attendance-table td:nth-child(2),
+.attendance-table td:nth-child(3),
+.attendance-table td:nth-child(4) {
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 63px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        background-color: #0075ff;
+        transition: opacity 0.5s ease; /* Add smooth transition */
+        opacity: 0;
+    }
+
+    .nav-list.show {
+        display: flex;
+        opacity: 1;
+    }
+
+    .nav-list li {
+        padding: 10px;
+    }
+
+    .burger {
+        display: flex;
+        flex-direction: column;
+    }
+    .attendance-container {
+        /* overflow-x: auto; */
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    h1.attendance{
+        margin-top: 129px;
+    }
+    .navbar{
+        position:sticky;
+    }
+}
+.log-attendance {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0075ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.log-attendance:hover {
+    background-color: #0056b3;
+}
+
+.attendance-table td[contenteditable="true"] {
+    animation: wobble 0.5s ease-in-out;
+}

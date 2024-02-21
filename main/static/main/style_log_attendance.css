@@ -1,0 +1,140 @@
+/* Add this CSS to your existing style.css or create a new CSS file */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma,Geneva, Verdana, sans-serif;
+    background-color: #f1f1f1b2;
+}
+
+.navbar {
+    background-color: #0075ff;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.5s ease; /* Slowdown the background color transition */
+}
+
+.logo_img {
+    background-image: url(Logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 130px;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-list li {
+    margin-right: 15px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 2.5px 0;
+    transition: .3s ease-out;
+}
+
+.burger.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5.5px, 6px);
+}
+
+.burger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5.5px, -6px);
+}
+
+.attendance-container {
+    margin: 80px;
+    margin-top: 125px;
+    padding: 135px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 18px;
+}
+
+select {
+    padding: 10px;
+}
+
+button {
+    background-color: #0075ff;
+    color: white;
+    padding: 10px;
+    margin: 0 auto;
+    width: 20%;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0051ff;
+}
+
+/* Media queries for responsiveness */
+
+@media screen and (max-width: 768px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 63px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        background-color: #0075ff;
+        transition: opacity 0.5s ease; /* Add smooth transition */
+        opacity: 0;
+    }
+
+    .nav-list.show {
+        display: flex;
+        opacity: 1;
+    }
+
+    .nav-list li {
+        padding: 10px;
+    }
+
+    .burger {
+        display: flex;
+        flex-direction: column;
+    }
+    .attendance-container{
+        margin-top: 160px;
+        padding: 45px;
+    }
+}
+
+/* Add additional styles as needed */

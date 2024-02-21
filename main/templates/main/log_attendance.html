@@ -1,0 +1,57 @@
+<!-- log_attendance.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'main/logo 3.png' %}" type="image/x-icon">
+    <title>Log Attendance</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/style_log_attendance.css' %}">
+    <!-- Add additional styles if needed -->
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <a href="{% url 'home' %}"><div class="logo_img"></div></a>
+            
+        </div>
+        <div class="burger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="{% url 'change_password' %}">Change Password</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="{% url 'support_page' %}">Support</a></li>
+            <li><a href="{% url 'logout' %}?next=/">Logout</a></li>
+        </ul>
+    </div>
+<div class="attendance-container">
+    <h1>Log Attendance for {{ subject.name }}</h1>
+
+    <form method="post" action="{% url 'log_attendance' subject_id=subject.id %}">
+        {% csrf_token %}
+        <label for="attended">Did you attend the lecture?</label>
+        <select name="attended" id="attended">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    function toggleMenu() {
+        const navList = document.querySelector('.nav-list');
+        navList.classList.toggle('show');
+        document.querySelector('.burger').classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>
