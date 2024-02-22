@@ -6,7 +6,7 @@
 
 ## Introduction
 
-The Attendance Management System is a web-based application designed to simplify the process of managing and tracking attendance for various subjects or classes. It provides features for users to add, update, and view attendance records, as well as generate reports.
+The Attendance Management System is a web-based application designed to simplify the process of managing and tracking attendance for various subjects or classes. It provides features for users to add, update, and view attendance records.
 
 ## Features
 
